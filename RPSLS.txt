@@ -1,0 +1,70 @@
+"""
+
+http://www.codeskulptor.org/#user38_dJAlEegUlc7Nr16.py
+
+Week One:
+Mini-project # 1 - Rock-paper-scissors-lizard-Spock
+"""
+
+import math
+import random
+
+# function to convert number to string:
+
+def number_to_name(number):
+    if number == 0:
+        number = "rock"
+    elif number == 1:
+        number = "Spock"
+    elif number == 2:
+        number = "paper"
+    elif number == 3:
+        number = "lizard"
+    else:
+        number = "scissors"
+    return number
+    
+# function to convert string to number:
+
+def name_to_number(name):
+    if name == "rock":
+        name = 0
+    elif name == "Spock":
+        name = 1
+    elif name == "paper":
+        name = 2
+    elif name == "lizard":
+        name = 3
+    else:
+        name = 4
+    return name
+    
+# function to determine the winner of a game of Rock, Paper, Scissors, Lizard, Spock.
+
+def rpsls(guess):
+    player_number = name_to_number(guess)
+    comp_number = random.randrange(0, 5)
+    difference = (player_number - comp_number) % 5
+    print "Player chooses", number_to_name (player_number)
+    print "Computer chooses", number_to_name (comp_number)
+    if difference == 0:
+        print "Player and Computer tie!"
+    elif difference == 1:
+        print "Player Wins!"
+    elif difference == 2:
+        print "Player Wins!"
+    elif difference == 3:
+        print "Computer Wins!"
+    else:
+        print "Computer Wins!"
+    return ""
+
+# Play five games with random guesses from computer.
+
+print rpsls("rock")
+print rpsls("Spock")
+print rpsls("paper")
+print rpsls("lizard")
+print rpsls("scissors")
+
+#______Bazinga!______:)
